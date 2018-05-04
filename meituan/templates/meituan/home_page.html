@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Prince Benson Meituan</title>
+</head>
+<body>
+ <!-- Site Header -->
+ <h1>Prince Benson Fusion Restaurant</h1>
+
+<!-- Blog Post -->
+ <h2>Tasty Treats To Your Door</h2>
+ <p><img src = "http://www.travelyourself.ca/wp-content/uploads/2012/03/crepe2.jpg"></p>
+<p><img src = "https://weneedfun.com/wp-content/uploads/2015/10/Beautiful-Food-Photos-2.jpg"></p>
+<p><img src = "https://weneedfun.com/wp-content/uploads/2015/10/Beautiful-Food-Photos-21-1024x768.jpg"></p>
+<!-- Like And Comment -->
+ <button>Like</button>
+ <h2>Leave a address</h2>
+ <form action="{% url 'meituan:home_page' %}" method="POST">
+ {% csrf_token %}
+ <input type="order" placeholder="Please Enter Your order" name="order"><br><br>
+ <textarea name="address" placeholder="Please Enter Your address"></textarea><br>
+ <input type="submit" value="order">
+ </form>
+
+<h2>addresses</h2>
+ User {{order}} says: {{address}}
+</body>
+</html>
